@@ -1,0 +1,901 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #111;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* CORES */
+:root {
+    --gold: #d4af7a;
+    --dark-bg: #111111;
+    --grey-bg: #1f1f1f;
+    --light-text: #f0f0f0;
+}
+
+.text-gold {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background-color: #1a1a1a;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* controla distância entre links e botão */
+    margin-left: auto; /* empurra tudo para a direita */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* diminui espaço entre links */
+}
+
+.nav-links a:hover {
+    color: #d4af7a;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: #111;
+    padding: 10px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 75px;
+}
+
+.hero .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Gradiente para escurecer o lado esquerdo onde fica o texto, como no PDF */
+.overlay-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 100px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #ccc;
+    max-width: 600px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn-gold {
+    display: inline-block;
+    background-color: var(--gold);
+    color: #111;
+    padding: 20px 45px;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.separator-line {
+    width: 273px;
+    height: 3px;
+    background-color: #fff;
+}
+
+/* MISSION SECTION */
+.mission {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.mission .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 60%;
+}
+
+/* Gradiente para escurecer o lado direito onde fica o texto */
+.overlay-mission {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 40%, #000 70%);
+    z-index: 2;
+}
+
+.mission-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: left; /* Mantém alinhamento à esquerda, mas o bloco à direita */
+}
+
+.mission-content h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    max-width: 1000px;
+    margin-left: auto; /* Empurra para a direita */
+}
+
+.mission-content p {
+    font-size: 22px;
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+}
+
+strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* SERVICES SECTION */
+.services {
+    background-color: #222;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #fff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.card {
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.card h3 {
+    font-size: 22px;
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.card p strong {
+    color: #fff;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #000;
+    padding: 60px 0 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 40px;
+}
+
+.logo-col img {
+    width: 120px;
+    height: auto;
+}
+
+.links-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.links-col a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.social-col {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 13px;
+    color: var(--gold);
+}
+
+.footer-col.links-col a:hover {
+    color:  #d4af7a;
+}
+
+#topo,
+#sobre,
+#servicos {
+    scroll-margin-top: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.blog-list {
+    padding: 80px 0;
+    background: #0e0e0e;
+}
+
+.blog-list .container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.blog-card {
+    background: #151515;
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 32px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    border-color: #d4af7a;
+    transform: translateY(-4px);
+}
+
+.blog-card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.blog-card p {
+    font-size: 15px;
+    color: #cfcfcf;
+    margin-bottom: 20px;
+}
+
+.blog-card a {
+    font-size: 14px;
+    color: #d4af7a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.blog-card a:hover {
+    text-decoration: underline;
+}
+
+.blog-hero {
+    padding: 80px 0 40px;
+    background: linear-gradient(180deg, #111 0%, #0e0e0e 100%);
+}
+
+.blog-hero h1 {
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+.blog-hero p {
+    max-width: 700px;
+    font-size: 16px;
+    color: #cfcfcf;
+}
+
+/* =======================
+   ARTIGO - ESTILO GERAL
+======================= */
+
+.article-hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(to bottom, #0f0f0f, #0b0b0b);
+}
+
+.article-hero h1 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    max-width: 900px;
+    line-height: 1.2;
+}
+
+.article-subtitle {
+    margin-top: 20px;
+    font-size: 1.05rem;
+    color: #cfcfcf;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+/* =======================
+   CONTEÚDO DO ARTIGO
+======================= */
+
+.article-content {
+    background-color: #0b0b0b;
+    padding: 70px 0;
+}
+
+.article-container {
+    max-width: 760px; /* 🔥 isso muda tudo */
+}
+
+.article-container p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 28px;
+}
+
+.article-container h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 60px;
+    margin-bottom: 16px;
+    color: #ffffff;
+    position: relative;
+}
+
+/* Linha sutil abaixo dos títulos */
+.article-container h2::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background-color: #d4af7a;
+    display: block;
+    margin-top: 10px;
+}
+
+.article-hero {
+    padding: 60px 0 40px; /* antes estava grande demais */
+}
+
+.article-intro {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #d6d6d6;
+    margin-bottom: 50px;
+}
+
+
+@media (max-width: 768px) {
+
+    /* CONTAINER */
+    .container {
+        padding: 0 16px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .nav-links {
+        gap: 18px;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    /* HERO */
+    .hero {
+        margin-top: 110px;
+        min-height: 90vh;
+        height: auto;
+    }
+
+    .hero-content {
+        padding-top: 80px;
+    }
+
+    .hero-content h1 {
+        font-size: 44px;
+        line-height: 1.15;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .btn-gold {
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+
+    .separator-line {
+        width: 160px;
+        height: 2px;
+    }
+
+    .overlay-hero {
+        background: linear-gradient(
+            90deg,
+            rgba(17,17,17,0.85) 0%,
+            rgba(17,17,17,0.55) 50%,
+            rgba(17,17,17,0.1) 100%
+        );
+    }
+
+    /* MISSION */
+    .mission {
+        padding: 80px 0;
+    }
+
+    .mission-content {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .mission-content h2 {
+        font-size: 32px;
+        max-width: 100%;
+    }
+
+    .mission-content p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .overlay-mission {
+        background: rgba(0,0,0,0.88);
+    }
+
+    /* SERVICES */
+    .services {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 34px;
+        margin-bottom: 40px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 30px 24px;
+        border-radius: 16px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+
+    /* FOOTER */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 28px;
+    }
+
+    .links-col {
+        gap: 10px;
+    }
+
+    .social-col {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+}
+
+.desktop-img {
+    display: block;
+}
+
+.mobile-img {
+    display: none;
+}
+
+/* =========================
+   TABLET: RESPONSIVIDADE 768px
+========================= */
+@media (max-width: 769px) {
+
+    /* NAVBAR */
+    .btn-primary {
+        display: none; /* remove "Trabalhe conosco" */
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* HERO */
+    .hero {
+        height: auto;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .overlay-hero {
+        display: none; /* remove overlay lateral */
+    }
+
+    .hero-content {
+        order: 1;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 24px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 50px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+        margin: 0 auto 24px auto;
+    }
+
+    .btn-gold {
+        padding: 18px 26px;
+        font-size: 20px;
+    }
+
+    .separator-line {
+        margin: 0 auto;
+    }
+
+    /* MISSION */
+    .mission {
+        padding: 70px 0;
+    }
+
+    .mission .bg-img {
+        opacity: 25%;
+    }
+
+    .overlay-mission {
+        background: rgba(0,0,0,0.9); /* fundo uniforme */
+    }
+
+    .mission-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .mission-content h2 {
+        font-size: 42px;
+        margin-left: 0;
+    }
+
+    .mission-content p {
+        font-size: 25px;
+        margin-left: 0;
+    }
+
+    .desktop-img {
+        display: none;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+
+    .mobile-img {
+        order: 2;
+        display: block;
+        width: 100%;
+        height: auto;
+        position: static; /* ESSENCIAL */
+    }
+
+    /* SERVICES */
+    .services {
+        padding: 70px 0; /* ↓ de 80 */
+    }
+
+    .section-title {
+        font-size: 42px; /* ↓ de 48 */
+        margin-bottom: 50px;
+    }
+
+    .services-grid {
+        gap: 22px; /* ↓ de 25 */
+    }
+
+    .card {
+        padding: 40px 32px; /* ↓ de 50x40 */
+        border-radius: 18px;
+    }
+
+    .card h3 {
+        font-size: 30px;
+    }
+
+    .card p {
+        font-size: 20px;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+}
+
+/* =========================
+   RESPONSIVIDADE 425px
+========================= */
+@media (max-width: 426px) {
+
+    /* NAVBAR */
+    .btn-primary {
+        display: none; /* remove "Trabalhe conosco" */
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* HERO */
+    .hero {
+        height: auto;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .overlay-hero {
+        display: none; /* remove overlay lateral */
+    }
+
+    .hero-content {
+        order: 1;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 24px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+        margin: 0 auto 24px auto;
+    }
+
+    .btn-gold {
+        padding: 14px 26px;
+        font-size: 15px;
+    }
+
+    .separator-line {
+        margin: 0 auto;
+    }
+
+    /* MISSION */
+    .mission {
+        padding: 70px 0;
+    }
+
+    .mission .bg-img {
+        opacity: 25%;
+    }
+
+    .overlay-mission {
+        background: rgba(0,0,0,0.9); /* fundo uniforme */
+    }
+
+    .mission-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .mission-content h2 {
+        font-size: 28px;
+        margin-left: 0;
+    }
+
+    .mission-content p {
+        font-size: 15px;
+        margin-left: 0;
+    }
+
+    .desktop-img {
+        display: none;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+
+    .mobile-img {
+        order: 2;
+        display: block;
+        width: 100%;
+        height: auto;
+        position: static; /* ESSENCIAL */
+    }
+
+    /* SERVICES */
+    .services {
+        padding: 70px 0; /* ↓ de 80 */
+    }
+
+    .section-title {
+        font-size: 42px; /* ↓ de 48 */
+        margin-bottom: 50px;
+    }
+
+    .services-grid {
+        gap: 22px; /* ↓ de 25 */
+    }
+
+    .card {
+        padding: 40px 32px; /* ↓ de 50x40 */
+        border-radius: 18px;
+    }
+
+    .card h3 {
+        font-size: 21px;
+    }
+
+    .card p {
+        font-size: 15.5px;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+}
